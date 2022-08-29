@@ -1,4 +1,4 @@
-<?
+<?php
 function set_flash_message($message = "")
 {
     $_SESSION["flash_message"] = $message;

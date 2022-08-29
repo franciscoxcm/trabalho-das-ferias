@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 require_once "config.php";
@@ -31,3 +31,11 @@ switch ($page) {
 $page_template = "templates/page_" . $page . ".php";
 
 require_once "templates/head.php";
+
+if (file_exists($page_template)) {
+    require_once "$page_template";
+} else {
+    require_once "templates/page_not_found.php";
+}
+
+require_once "templates/foot.php";
